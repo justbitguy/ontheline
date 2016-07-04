@@ -30,7 +30,6 @@ function main() {
 		if (queryLang != ""){
 			language = queryLang; 
 		}
-		// alert(language);
 		return language;
 	}();
     
@@ -65,10 +64,10 @@ function main() {
 	};
 	
 	document.title = function(){
-		if (GameLang == "en"){
-			return "Ultimate Challenge";
+		if (GameLang == "zh"){
+			return "極限挑戰";
 		} else {
-			return "極限挑戰";	
+			return "Ultimate Challenge";	
 		}
 	}();
 	
