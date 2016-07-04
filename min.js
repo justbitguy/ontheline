@@ -1225,7 +1225,7 @@ function main() {
 				oa();
 				switch ($) {
 					case c.stateType.ready:
-						0 < ba.length ? 0 < ba.length && (qa = ba.shift(), "en" == w ? b.canvas.drawImage("noticeE", 16, 115 + qa.y + 460) : b.canvas.drawImage("notice", 16, 115 + qa.y + 460)) : ($ = c.stateType.start, v(c.renStateType.throwing));
+						0 < ba.length ? 0 < ba.length && (qa = ba.shift(), "en" == w ? b.canvas.drawImage("noticeE", 16, 115 + qa.y + 310) : b.canvas.drawImage("notice", 16, 115 + qa.y + 310)) : ($ = c.stateType.start, v(c.renStateType.throwing));
 						za();
 						break;
 					case c.stateType.start:
