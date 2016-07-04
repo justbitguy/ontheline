@@ -88,7 +88,10 @@ function main() {
 		src: "img/english.png"
 	}, {
 		id: "logo",
-		src: "img/logo.png?d"
+		src: "img/logo.png"
+	}, {
+		id: "logoE",
+		src: "img/logo_en.png"
 	}, {
 		id: "bg",
 		src: "img/bg_240.png"
@@ -106,7 +109,7 @@ function main() {
 		src: "img/jiafen.png"
 	}, {
 		id: "jiafenE",
-		src: "img/jiafenE.png"
+		src: "img/jiafen_en.png"
 	}, {
 		id: "jiantou",
 		src: "img/jiantou.png"
@@ -123,11 +126,11 @@ function main() {
 		id: "shengzixiaoguo",
 		src: "img/shengzixiaoguo.png"
 	}, {
-		id: "tishi_1",
-		src: "img/tishi_1.png"
+		id: "tishi",
+		src: "img/tishi.png"
 	}, {
-		id: "tishi_1E",
-		src: "img/tishi_1E.png"
+		id: "tishiE",
+		src: "img/tishi_en.png"
 	}, {
 		id: "zhuzi_y",
 		src: "img/zhuzi_y.png"
@@ -139,7 +142,7 @@ function main() {
 		src: "img/notice.png"
 	}, {
 		id: "noticeE",
-		src: "img/noticeE.png"
+		src: "img/notice_en.png"
 	}, {
 		id: "han1",
 		src: "img/img036.png"
@@ -150,11 +153,14 @@ function main() {
 		id: "mingzhong",
 		src: "img/mingzhong.png"
 	}, {
+		id: "mingzhongE",
+		src: "img/mingzhong_en.png"
+	}, {
 		id: "start",
 		src: "img/start.png"
 	}, {
 		id: "startE",
-		src: "img/start.png"
+		src: "img/start_en.png"
 	}, {
 		id: "more",
 		src: "img/more.png?d"
@@ -172,7 +178,7 @@ function main() {
 		src: "img/retry.png"
 	}, {
 		id: "retryE",
-		src: "img/retry.png"
+		src: "img/retry_en.png"
 	}, {
 		id: "isexit",
 		src: "img/isexit.png"
@@ -187,13 +193,13 @@ function main() {
 		src: "img/score.png"
 	}, {
 		id: "scoreE",
-		src: "img/score.png"
+		src: "img/score_en.png"
 	}, {
 		id: "Hscore",
 		src: "img/Hscore.png"
 	}, {
 		id: "HscoreE",
-		src: "img/Hscore.png"
+		src: "img/Hscore_en.png"
 	}, {
 		id: "zz",
 		src: "img/zz.png"
@@ -1194,7 +1200,11 @@ function main() {
 				d.ctx.fillStyle = "#000000";
 				d.ctx.fillRect(0, 0, d.width, d.height);
 				var e = b.canvas.screen.getWidth() / b.getImage("logo").width;
-				b.canvas.drawImage("logo", 0, 0, b.getImage("logo").width, b.getImage("logo").height, 0, 40, b.getImage("logo").width * e, b.getImage("logo").height * e);
+				if ("en" == w) {
+					b.canvas.drawImage("logoE", 0, 0, b.getImage("logoE").width, b.getImage("logoE").height, 0, 40, b.getImage("logoE").width * e, b.getImage("logoE").height * e);
+				}else {
+					b.canvas.drawImage("logo", 0, 0, b.getImage("logo").width, b.getImage("logo").height, 0, 40, b.getImage("logo").width * e, b.getImage("logo").height * e);
+				}
 				"en" == w ? (p.draw("startE", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("moreE",
 					0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/) : (p.draw("start", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("more", 0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/)
 			} else if (g == ca) oa(), b.canvas.drawImage("intro", (b.canvas.screen.getWidth() - b.getImage("intro").width) / 2, 100);
@@ -1235,12 +1245,12 @@ function main() {
 				b.canvas.drawImage("ren",
 					k.sx, k.sy, k.width, k.height, a.x + k.dx, a.y + k.dy, 2 * k.width, 2 * k.height);
 				0 < Y.length && b.canvas.drawImage("life_2", 38 * Y.shift(), 0, 38, 35, 420 + 15 * a.life, 15, 38, 35);
-				0 < S.length ? (X = S.shift(), "en" == w ? b.canvas.drawImage("jiafenE", A, B, 63, 35, Q, R + X.y, 63, 35) : b.canvas.drawImage("jiafen", A, B, 63, 35, Q, R + X.y, 63, 35), 1 < a.continualHit && ("en" == w ? b.canvas.drawImage("tishi_1E", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15) : b.canvas.drawImage("tishi_1", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15))) : 0 < z && (x += parseInt(z), z = 0);
+				0 < S.length ? (X = S.shift(), "en" == w ? b.canvas.drawImage("jiafenE", A, B, 63, 35, Q, R + X.y, 63, 35) : b.canvas.drawImage("jiafen", A, B, 63, 35, Q, R + X.y, 63, 35), 1 < a.continualHit && ("en" == w ? b.canvas.drawImage("tishiE", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15) : b.canvas.drawImage("tishi", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15))) : 0 < z && (x += parseInt(z), z = 0);
 				/*I.draw("cd", 0, 0, I.w, I.h, I.x, I.y, I.w, I.h);*/
-				"en" == w ? (b.canvas.drawImage("HscoreE", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("scoreE", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishi_1E", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1)) : (b.canvas.drawImage("Hscore", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("score", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishi_1", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1));
+				"en" == w ? (b.canvas.drawImage("HscoreE", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("scoreE", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishiE", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1)) : (b.canvas.drawImage("Hscore", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("score", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishi", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1));
 				for (e = 0; e < a.life; e++) b.canvas.drawImage("life_1", 430 + 15 * e, 30);
-				aa && (0 != l.sSpeed && ("en" == w ? b.canvas.drawImage("tishi_1E", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0) : b.canvas.drawImage("tishi_1", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0)), 0 != l.gSpeed && ("en" == w ? b.canvas.drawImage("tishi_1E", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou",
-					0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0) : b.canvas.drawImage("tishi_1", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou", 0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0)));
+				aa && (0 != l.sSpeed && ("en" == w ? b.canvas.drawImage("tishiE", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0) : b.canvas.drawImage("tishi", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0)), 0 != l.gSpeed && ("en" == w ? b.canvas.drawImage("tishiE", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou",
+					0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0) : b.canvas.drawImage("tishi", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou", 0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0)));
 				0 < W.length && b.canvas.drawImage("zz", 0, 0, b.getImage("zz").width, b.getImage("zz").height, 0, 0, b.canvas.screen.getWidth(), b.canvas.screen.getHeight()).drawImage("mingzhong", 201 * W.shift(), 0, 201, 146, a.x + 5, a.y + k.height + 10, 201, 146, b.graphics.ANCHOR_HV);
 				a.state !=
 					c.renStateType.landing && a.state != c.renStateType.moving && a.state != c.renStateType.anxiousLeft && a.state != c.renStateType.anxiousRight && b.keyPressed("menu") && (/*dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.stop())
