@@ -28,7 +28,7 @@ function main() {
 		if (queryLang != ""){
 			language = queryLang; 
 		}
-		alert(language);
+		// alert(language);
 		return language;
 	};
 
@@ -1019,6 +1019,7 @@ function main() {
 			w = gameLanguage(),
 			g = null == w ? T : H,
 			y = b.localStorage.getItem("highScore");
+			stopped = 0;
 		null == y && (y = 0);
 		var ta = function() {
 				z = x = 0;
@@ -1156,11 +1157,20 @@ function main() {
 				d.ctx.fillRect(0, 0, d.width, d.height);
 				var e = b.canvas.screen.getWidth() / b.getImage("logo").width;
 				b.canvas.drawImage("logo", 0, 0, b.getImage("logo").width, b.getImage("logo").height, 0, 40, b.getImage("logo").width * e, b.getImage("logo").height * e);
-				"ENG" == w ? (p.draw("startE", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h), q.draw("moreE",
-					0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)) : (p.draw("start", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h), q.draw("more", 0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h))
+				"ENG" == w ? (p.draw("startE", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("moreE",
+					0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/) : (p.draw("start", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("more", 0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/)
 			} else if (g == ca) oa(), b.canvas.drawImage("intro", (b.canvas.screen.getWidth() - b.getImage("intro").width) / 2, 100);
-			else if (g == O) oa(), "ENG" == w ? (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("scoreE", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("HscoreE", 120, 240), m.draw("retryE", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h),
-				n.draw("backE", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h)) : (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("score", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("Hscore", 120, 240), m.draw("retry", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h), n.draw("back", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h));
+			else if (g == O) {
+				// sg: for game end callback.
+				if (stopped == 0){
+					var json_obj = {"score": x, "highscore":y};
+					var json_msg = JSON.stringify(json_obj);
+					alert("2" + "##" + json_msg);
+					stopped = 1;
+				}
+				oa(), "ENG" == w ? (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("scoreE", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("HscoreE", 120, 240), m.draw("retryE", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h)/*,
+				n.draw("backE", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h)*/) : (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("score", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("Hscore", 120, 240), m.draw("retry", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h)/*, n.draw("back", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h)*/);
+			}
 			else if (g == da) "ENG" == w ? b.canvas.drawImage("isexitE", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300) : b.canvas.drawImage("isexit", (b.canvas.screen.getWidth() - b.getImage("isexit").width) /
 				2, 300);
 			else if (g == U) {
