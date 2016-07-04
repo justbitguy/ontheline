@@ -234,7 +234,7 @@ function main() {
 		}
 
 		function sa(e) {
-			g == T ? r(s, e.x, e.y) ? s.isPressed = !0 : r(u, e.x, e.y) && (u.isPressed = !0) : g == H ? r(p, e.x, e.y) ? p.isPressed = !0 : r(q, e.x, e.y) && (q.isPressed = !0) : g == ca ? (ta(), g = U) : g == U ? r(I, e.x, e.y) ? g = da : a.state == c.renStateType.swinging && v(c.renStateType.flying) : g == O ? r(m, e.x, e.y) ? m.isPressed = !0 : r(n, e.x, e.y) && dp_share(x) && (n.isPressed = !0) : g == da && (r(Aa, e.x, e.y) ? g = H : r(Ba, e.x, e.y) && (g = U))
+			g == T ? r(s, e.x, e.y) ? s.isPressed = !0 : r(u, e.x, e.y) && (u.isPressed = !0) : g == H ? r(p, e.x, e.y) ? p.isPressed = !0 : r(q, e.x, e.y) && (q.isPressed = !0) : g == ca ? (ta(), g = U) : g == U ? r(I, e.x, e.y) ? g = da : a.state == c.renStateType.swinging && v(c.renStateType.flying) : g == O ? r(m, e.x, e.y) ? m.isPressed = !0 : r(n, e.x, e.y) /*&& dp_share(x)*/ && (n.isPressed = !0) : g == da && (r(Aa, e.x, e.y) ? g = H : r(Ba, e.x, e.y) && (g = U))
 		}
 
 		function ua(a) {
@@ -243,7 +243,7 @@ function main() {
 		}
 
 		function va(a) {
-			g == T ? s.isPressed && r(s, a.x, a.y) ? (g = H, w = "CHS", b.localStorage.setItem("language", w), s.isPressed = !1) : u.isPressed && r(u, a.x, a.y) && (g = H, w = "ENG", b.localStorage.setItem("language", w), u.isPressed = !1) : g == H ? p.isPressed && r(p, a.x, a.y) ? (g = ca, p.isPressed = !1) : q.isPressed && r(q, a.x, a.y) && (dp_Ranking(), q.isPressed = !1) : g == O && (m.isPressed && r(m, a.x, a.y) ? (ta(), g = U, m.isPressed = !1) :
+			g == T ? s.isPressed && r(s, a.x, a.y) ? (g = H, w = "CHS", b.localStorage.setItem("language", w), s.isPressed = !1) : u.isPressed && r(u, a.x, a.y) && (g = H, w = "ENG", b.localStorage.setItem("language", w), u.isPressed = !1) : g == H ? p.isPressed && r(p, a.x, a.y) ? (g = ca, p.isPressed = !1) : q.isPressed && r(q, a.x, a.y) && (/*dp_Ranking(),*/ q.isPressed = !1) : g == O && (m.isPressed && r(m, a.x, a.y) ? (ta(), g = U, m.isPressed = !1) :
 				n.isPressed && r(n, a.x, a.y) && (g = H, n.isPressed = !1))
 		}
 		d.showClue = function() {
@@ -1213,7 +1213,7 @@ function main() {
 						za();
 						break;
 					case c.stateType.over:
-						K(), 0 < pa.length ? pa.pop() : (dp_submitScore(-1, x), y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.over())
+						K(), 0 < pa.length ? pa.pop() : /*(dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.over())
 				}
 				for (e = 0; e < f.tiles.length; e++) f.tiles[e].render();
 				b.canvas.strokeStyle("#000000");
@@ -1233,7 +1233,7 @@ function main() {
 					0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0) : b.canvas.drawImage("tishi_1", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou", 0 < l.gSpeed ? 26 : 0, 0, 26, 26, 40, 30, 26, 26).drawNumber(Math.abs(l.gSpeed), "num", 14, 18, 70, 34, !0)));
 				0 < W.length && b.canvas.drawImage("zz", 0, 0, b.getImage("zz").width, b.getImage("zz").height, 0, 0, b.canvas.screen.getWidth(), b.canvas.screen.getHeight()).drawImage("mingzhong", 201 * W.shift(), 0, 201, 146, a.x + 5, a.y + k.height + 10, 201, 146, b.graphics.ANCHOR_HV);
 				a.state !=
-					c.renStateType.landing && a.state != c.renStateType.moving && a.state != c.renStateType.anxiousLeft && a.state != c.renStateType.anxiousRight && b.keyPressed("menu") && (dp_submitScore(-1, x), y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.stop())
+					c.renStateType.landing && a.state != c.renStateType.moving && a.state != c.renStateType.anxiousLeft && a.state != c.renStateType.anxiousRight && b.keyPressed("menu") && (/*dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.stop())
 			}
 		})
 	})
