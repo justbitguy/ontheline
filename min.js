@@ -1223,7 +1223,7 @@ function main() {
 						za();
 						break;
 					case c.stateType.over:
-						K(), 0 < pa.length ? pa.pop() : /*(dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.over())
+						K(), 0 < pa.length ? pa.pop() : (/*dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.over())
 				}
 				for (e = 0; e < f.tiles.length; e++) f.tiles[e].render();
 				b.canvas.strokeStyle("#000000");
