@@ -131,7 +131,7 @@ function main() {
 
 		function va(a) {
 			g == T ? s.isPressed && r(s, a.x, a.y) ? (g = H, w = "zh", b.localStorage.setItem("language", w), s.isPressed = !1) : u.isPressed && r(u, a.x, a.y) && (g = H, w = "en", b.localStorage.setItem("language", w), u.isPressed = !1) : g == H ? p.isPressed && r(p, a.x, a.y) ? (g = ca, p.isPressed = !1) : q.isPressed && r(q, a.x, a.y) && (dp_Ranking(), q.isPressed = !1) : g == O && (m.isPressed && r(m, a.x, a.y) ? (ta(), g = U, m.isPressed = !1) :
-				n.isPressed && r(n, a.x, a.y) && (g = H, n.isPressed = !1))
+				n.isPressed && r(n, a.x, a.y) && (/*g = H,*/ n.isPressed = !1))
 		}
 		d.showClue = function() {
 			window.scrollTo(0, -5);
