@@ -31,7 +31,7 @@ var jsGame = window.jsGame || {};
 				over: null,
 				zone: null,
 				active: null,
-				timeout: 30,
+				timeout: 25,
 				isPause: false,
 				gameFlow: 0,
 				zoneArgs: null,
