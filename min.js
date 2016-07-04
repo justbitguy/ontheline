@@ -1068,9 +1068,9 @@ function main() {
 				$ = c.stateType.ready;
 				stopped = 0;
 				M = 1;
-				ea(190, 560 - 2 * a.height, 3);
+				ea(190, 410 - 2 * a.height, 3);
 				v(c.renStateType.standing);
-				f.tiles = [new Z(-110, 60, 100), new Z(10, 100, 160), new Z(190, 40, 220)];
+				f.tiles = [new Z(-110, 60, 250), new Z(10, 100, 310), new Z(190, 40, 370)];
 				ja = c.lineStateType.holding;
 				G = N = 0;
 				h.animateFrames = [];
