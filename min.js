@@ -1024,6 +1024,7 @@ function main() {
 		var ta = function() {
 				z = x = 0;
 				$ = c.stateType.ready;
+				stopped = 0;
 				M = 1;
 				ea(190, 410 - 2 * a.height, 3);
 				v(c.renStateType.standing);
@@ -1198,8 +1199,7 @@ function main() {
 					k.sx, k.sy, k.width, k.height, a.x + k.dx, a.y + k.dy, 2 * k.width, 2 * k.height);
 				0 < Y.length && b.canvas.drawImage("life_2", 38 * Y.shift(), 0, 38, 35, 420 + 15 * a.life, 15, 38, 35);
 				0 < S.length ? (X = S.shift(), "ENG" == w ? b.canvas.drawImage("jiafenE", A, B, 63, 35, Q, R + X.y, 63, 35) : b.canvas.drawImage("jiafen", A, B, 63, 35, Q, R + X.y, 63, 35), 1 < a.continualHit && ("ENG" == w ? b.canvas.drawImage("tishi_1E", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15) : b.canvas.drawImage("tishi_1", 0, 15, 80, 15, Q + 70, R + X.y, 80, 15))) : 0 < z && (x += parseInt(z), z = 0);
-				I.draw("cd", 0, 0, I.w, I.h, I.x, I.y, I.w,
-					I.h);
+				/*I.draw("cd", 0, 0, I.w, I.h, I.x, I.y, I.w, I.h);*/
 				"ENG" == w ? (b.canvas.drawImage("HscoreE", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("scoreE", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishi_1E", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1)) : (b.canvas.drawImage("Hscore", 260, 2), b.canvas.drawNumber(y, "num", 14, 18, 470, 2, !1), b.canvas.drawImage("score", 264, 32), b.canvas.drawNumber(x, "num", 14, 18, 420, 32, !1).drawImage("tishi_1", 124, 15, 80, 15, 120, 10, 80, 15).drawNumber(M, "num", 14, 18, 235, 8, !1));
 				for (e = 0; e < a.life; e++) b.canvas.drawImage("life_1", 430 + 15 * e, 30);
 				aa && (0 != l.sSpeed && ("ENG" == w ? b.canvas.drawImage("tishi_1E", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0) : b.canvas.drawImage("tishi_1", 85, 0, 34, 15, 5, 8, 34, 15).drawImage("jiantou", 0 < l.sSpeed ? 52 : 78, 0, 26, 26, 40, 2, 26, 26).drawNumber(Math.abs(l.sSpeed), "num", 14, 18, 70, 6, !0)), 0 != l.gSpeed && ("ENG" == w ? b.canvas.drawImage("tishi_1E", 86, 15, 31, 15, 6, 35, 31, 15).drawImage("jiantou",
