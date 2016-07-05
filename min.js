@@ -701,25 +701,38 @@ function main() {
 			};
 			va(C)
 		});
+		
+		
 		var ra = !1;
+		
+		
 		b.run(function() {
 			window.scrollTo(0, -5);
-			if (window.innerHeight < window.innerWidth && jsGame.canvas.screen.getTouch()) d.showClue(), ra = !0;
-			else if (ra && (ra = !1), g == T) d.ctx.fillStyle = "#000000", d.ctx.fillRect(0,
-				0, d.width, d.height), s.draw("chinese", 0, s.isPressed ? 1 : 0, s.w, s.h, s.x, s.y, s.w, s.h), u.draw("english", 0, u.isPressed ? 1 : 0, u.w, u.h, u.x, u.y, u.w, u.h);
-			else if (g == H) {
+			
+			if (window.innerHeight < window.innerWidth && jsGame.canvas.screen.getTouch()){
+				d.showClue(), ra = !0;
+			} else if (ra && (ra = !1), g == T) {
+				d.ctx.fillStyle = "#000000";
+				d.ctx.fillRect(0, 0, d.width, d.height);
+				s.draw("chinese", 0, s.isPressed ? 1 : 0, s.w, s.h, s.x, s.y, s.w, s.h); 
+				u.draw("english", 0, u.isPressed ? 1 : 0, u.w, u.h, u.x, u.y, u.w, u.h);
+			} else if (g == H) {
+				// start entry.	
 				d.ctx.fillStyle = "#000000";
 				d.ctx.fillRect(0, 0, d.width, d.height);
 				var e = b.canvas.screen.getWidth() / b.getImage("logo").width;
 				if ("en" == w) {
 					b.canvas.drawImage("logoE", 0, 0, b.getImage("logoE").width, b.getImage("logoE").height, 0, 40, b.getImage("logoE").width * e, b.getImage("logoE").height * e);
+					p.draw("startE", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h);
 				}else {
 					b.canvas.drawImage("logo", 0, 0, b.getImage("logo").width, b.getImage("logo").height, 0, 40, b.getImage("logo").width * e, b.getImage("logo").height * e);
+					p.draw("start", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h);
 				}
-				"en" == w ? (p.draw("startE", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("moreE",
-					0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/) : (p.draw("start", 0, p.isPressed ? 1 : 0, p.w, p.h, p.x, p.y, p.w, p.h)/*, q.draw("more", 0, q.isPressed ? 1 : 0, q.w, q.h, q.x, q.y, q.w, q.h)*/)
-			} else if (g == ca) oa(), b.canvas.drawImage("intro", (b.canvas.screen.getWidth() - b.getImage("intro").width) / 2, 100);
-			else if (g == O) {
+			} else if (g == ca){
+				// intro page
+				oa(), b.canvas.drawImage("intro", (b.canvas.screen.getWidth() - b.getImage("intro").width) / 2, 100);
+			} else if (g == O) {
+				// game over page.
 				// sg: for game end callback.
 				if (stopped == 0){
 					var json_obj = {"score": x, "highscore":y};
@@ -727,17 +740,41 @@ function main() {
 					alert("2" + "##" + json_msg);
 					stopped = 1;
 				}
-				oa(), "en" == w ? (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("scoreE", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("HscoreE", 120, 240), m.draw("retryE", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h)/*,
-				n.draw("backE", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h)*/) : (b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("score", 180, 200), b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("Hscore", 120, 240), m.draw("retry", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h)/*, n.draw("back", 0, n.isPressed ? 1 : 0, n.w, n.h, n.x, n.y, n.w, n.h)*/);
+				oa(); 
+				if ("en" == w){
+					b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("scoreE", 180, 200); 
+					b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("HscoreE", 120, 240);
+					m.draw("retryE", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h);
+				} else {
+					b.canvas.drawNumber(x, "num", 14, 18, 300, 200, !1).drawImage("score", 180, 200); 
+					b.canvas.drawNumber(y, "num", 14, 18, 300, 240, !1).drawImage("Hscore", 120, 240); 
+					m.draw("retry", 0, m.isPressed ? 1 : 0, m.w, m.h, m.x, m.y, m.w, m.h);
+				}
+				
+			} else if (g == da){
+				// exit game confirm page.
+				if ("en" == w){
+					b.canvas.drawImage("isexitE", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300)
+				} else {
+					b.canvas.drawImage("isexit", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300);
+				}
 			}
-			else if (g == da) "en" == w ? b.canvas.drawImage("isexitE", (b.canvas.screen.getWidth() - b.getImage("isexit").width) / 2, 300) : b.canvas.drawImage("isexit", (b.canvas.screen.getWidth() - b.getImage("isexit").width) /
-				2, 300);
 			else if (g == U) {
+				// game playing page.
 				b.canvas.clearScreen();
 				oa();
 				switch ($) {
 					case c.stateType.ready:
-						0 < ba.length ? 0 < ba.length && (qa = ba.shift(), "en" == w ? b.canvas.drawImage("noticeE", 16, 115 + qa.y + 310) : b.canvas.drawImage("notice", 16, 115 + qa.y + 310)) : ($ = c.stateType.start, v(c.renStateType.throwing));
+						if (0 < ba.length){
+							qa = ba.shift(); 
+							if ("en" == w){
+								b.canvas.drawImage("noticeE", 16, 115 + qa.y + 310); 
+							} else {
+								b.canvas.drawImage("notice", 16, 115 + qa.y + 310);
+							}
+						} else {
+							($ = c.stateType.start, v(c.renStateType.throwing))
+						}
 						za();
 						break;
 					case c.stateType.start:
