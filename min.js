@@ -781,14 +781,44 @@ function main() {
 						za();
 						break;
 					case c.stateType.over:
-						K(), 0 < pa.length ? pa.pop() : (/*dp_submitScore(-1, x),*/ y < x && (y = x, b.localStorage.setItem("highScore", y)), g = O, b.gameFlow.over())
+						K();
+						if (0 < pa.length){
+							pa.pop() 	
+						} else {
+							if (y < x){
+								y = x; 
+								b.localStorage.setItem("highScore", y);
+							}
+							g = O;
+							b.gameFlow.over();
+						}
 				}
-				for (e = 0; e < f.tiles.length; e++) f.tiles[e].render();
+				
+				for (e = 0; e < f.tiles.length; e++) {
+					f.tiles[e].render();
+				}
+				
 				b.canvas.strokeStyle("#000000");
-				switch (ja) {
-					case c.lineStateType.shooting:
-						0 < h.animateFrames.length ? (V = h.animateFrames.shift(), h.fromX = V.fx, h.fromY = V.fy, h.rootX = V.tx, h.rootY = V.ty, 0 == h.animateFrames.length && (h.effectFrames = [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])) : 0 < h.effectFrames.length && (xa = h.effectFrames.shift(), b.canvas.drawImage("shengzixiaoguo", 32 * xa, 0, 32, 17, h.rootX - 16, h.rootY, 32, 17), 0 == h.effectFrames.length && v(c.renStateType.startSwinging))
+				
+				if (ja == c.lineStateType.shooting){
+					if (0 < h.animateFrames.length ){
+						V = h.animateFrames.shift();
+						h.fromX = V.fx;
+						h.fromY = V.fy;
+						h.rootX = V.tx;
+						h.rootY = V.ty;
+						if (0 == h.animateFrames.length){
+							h.effectFrames = [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3];
+						}
+					} else if (0 < h.effectFrames.length ){
+						xa = h.effectFrames.shift();
+						 b.canvas.drawImage("shengzixiaoguo", 32 * xa, 0, 32, 17, h.rootX - 16, h.rootY, 32, 17);
+						if (0 == h.effectFrames.length){
+							v(c.renStateType.startSwinging);						
+						}
+					}
 				}
+				
 				b.canvas.drawLine(h.fromX + 20, h.fromY, h.rootX, h.rootY);
 				b.canvas.drawImage("ren",
 					k.sx, k.sy, k.width, k.height, a.x + k.dx, a.y + k.dy, 2 * k.width, 2 * k.height);
