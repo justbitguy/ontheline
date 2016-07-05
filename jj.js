@@ -13,7 +13,7 @@ var jsGame = window.jsGame || {};
 				defaultWidth: 240,
 				defaultHeight: 320,
 				defaultColor: "rgb(0, 0, 0)",
-				bgColor: "#6A6A6A",
+				bgColor: "#000000",
 				cavansDoms: [],
 				ctxs: [],
 				device: "",
