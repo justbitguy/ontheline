@@ -55,7 +55,7 @@ function main() {
 			300 <= d.height ? d.isShowClue1 = !1 : d.isFirstInGame && (d.isFirstInGame = !1, d.isShowClue1 = !0)
 		},
 		initCanvas: function() {
-			jsGame.canvas.screen.getTouch() ? (window.scrollTo(0, -5), d.height = 720, d.width = 480, jsGame.canvas.screen.setHeight(d.height), d.top = 0, d.left = 0) : (d.height = 720, d.width = 480, jsGame.canvas.screen.setHeight(d.height), jsGame.canvas.screen.setWidth(d.width),
+			jsGame.canvas.screen.getTouch() ? (window.scrollTo(0, -5), d.height = 600, d.width = 480, jsGame.canvas.screen.setHeight(d.height), d.top = 0, d.left = 0) : (d.height = 600, d.width = 480, jsGame.canvas.screen.setHeight(d.height), jsGame.canvas.screen.setWidth(d.width),
 				d.top = 0, d.left = (window.innerWidth - d.width) / 2);
 			d.init();
 			d.canvas = document.getElementById("jsGameScreen");
@@ -582,7 +582,7 @@ function main() {
 				M = 1;
 				ea(190, 410 - 2 * a.height, 3);
 				v(c.renStateType.standing);
-				f.tiles = [new Z(-110, 60, 220), new Z(10, 100, 280), new Z(190, 40, 340)];
+				f.tiles = [new Z(-110, 60, 100), new Z(10, 100, 160), new Z(190, 40, 220)];
 				ja = c.lineStateType.holding;
 				G = N = 0;
 				h.animateFrames = [];
